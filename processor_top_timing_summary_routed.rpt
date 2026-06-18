@@ -1,14 +1,14 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Thu Jun 18 08:43:54 2026
+| Date         : Thu Jun 18 23:38:01 2026
 | Host         : DESKTOP-D1BDUE3 running 64-bit major release  (build 9200)
-| Command      : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -file timing_summary_report.txt
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file processor_top_timing_summary_routed.rpt -pb processor_top_timing_summary_routed.pb -rpx processor_top_timing_summary_routed.rpx -warn_on_violation
 | Design       : processor_top
 | Device       : 7a35t-csg324
 | Speed File   : -1  PRODUCTION 1.23 2018-06-13
 | Design State : Routed
------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Timing Summary Report
 
@@ -99,147 +99,6 @@ Table of Contents
 ---------------------------------
  There are 140 ports with no output delay specified. (HIGH)
 
-monitor_alu_res[0]
-monitor_alu_res[10]
-monitor_alu_res[11]
-monitor_alu_res[12]
-monitor_alu_res[13]
-monitor_alu_res[14]
-monitor_alu_res[15]
-monitor_alu_res[16]
-monitor_alu_res[17]
-monitor_alu_res[18]
-monitor_alu_res[19]
-monitor_alu_res[1]
-monitor_alu_res[20]
-monitor_alu_res[21]
-monitor_alu_res[22]
-monitor_alu_res[23]
-monitor_alu_res[24]
-monitor_alu_res[25]
-monitor_alu_res[26]
-monitor_alu_res[27]
-monitor_alu_res[28]
-monitor_alu_res[29]
-monitor_alu_res[2]
-monitor_alu_res[30]
-monitor_alu_res[31]
-monitor_alu_res[3]
-monitor_alu_res[4]
-monitor_alu_res[5]
-monitor_alu_res[6]
-monitor_alu_res[7]
-monitor_alu_res[8]
-monitor_alu_res[9]
-monitor_alu_src
-monitor_branch
-monitor_instr[0]
-monitor_instr[1]
-monitor_instr[22]
-monitor_instr[26]
-monitor_instr[27]
-monitor_instr[28]
-monitor_instr[2]
-monitor_instr[3]
-monitor_jump
-monitor_pc[0]
-monitor_pc[10]
-monitor_pc[11]
-monitor_pc[12]
-monitor_pc[13]
-monitor_pc[14]
-monitor_pc[15]
-monitor_pc[16]
-monitor_pc[17]
-monitor_pc[18]
-monitor_pc[19]
-monitor_pc[1]
-monitor_pc[20]
-monitor_pc[21]
-monitor_pc[22]
-monitor_pc[23]
-monitor_pc[24]
-monitor_pc[25]
-monitor_pc[26]
-monitor_pc[27]
-monitor_pc[28]
-monitor_pc[29]
-monitor_pc[2]
-monitor_pc[30]
-monitor_pc[31]
-monitor_pc[3]
-monitor_pc[4]
-monitor_pc[5]
-monitor_pc[6]
-monitor_pc[7]
-monitor_pc[8]
-monitor_pc[9]
-monitor_r0[0]
-monitor_r0[10]
-monitor_r0[11]
-monitor_r0[12]
-monitor_r0[13]
-monitor_r0[14]
-monitor_r0[15]
-monitor_r0[16]
-monitor_r0[17]
-monitor_r0[18]
-monitor_r0[19]
-monitor_r0[1]
-monitor_r0[20]
-monitor_r0[21]
-monitor_r0[22]
-monitor_r0[23]
-monitor_r0[24]
-monitor_r0[25]
-monitor_r0[26]
-monitor_r0[27]
-monitor_r0[28]
-monitor_r0[29]
-monitor_r0[2]
-monitor_r0[30]
-monitor_r0[31]
-monitor_r0[3]
-monitor_r0[4]
-monitor_r0[5]
-monitor_r0[6]
-monitor_r0[7]
-monitor_r0[8]
-monitor_r0[9]
-monitor_r1[0]
-monitor_r1[10]
-monitor_r1[11]
-monitor_r1[12]
-monitor_r1[13]
-monitor_r1[14]
-monitor_r1[15]
-monitor_r1[16]
-monitor_r1[17]
-monitor_r1[18]
-monitor_r1[19]
-monitor_r1[1]
-monitor_r1[20]
-monitor_r1[21]
-monitor_r1[22]
-monitor_r1[23]
-monitor_r1[24]
-monitor_r1[25]
-monitor_r1[26]
-monitor_r1[27]
-monitor_r1[28]
-monitor_r1[29]
-monitor_r1[2]
-monitor_r1[30]
-monitor_r1[31]
-monitor_r1[3]
-monitor_r1[4]
-monitor_r1[5]
-monitor_r1[6]
-monitor_r1[7]
-monitor_r1[8]
-monitor_r1[9]
-monitor_reg_write
-
  There are 0 ports with no output delay but user has a false path constraint
 
  There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
@@ -263,8 +122,6 @@ monitor_reg_write
 10. checking partial_input_delay (1)
 ------------------------------------
  There is 1 input port with partial input delay specified. (HIGH)
-
-rst
 
 
 11. checking partial_output_delay (0)
@@ -392,58 +249,43 @@ Slack (MET) :             0.825ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_O[1])
                                                       0.334    11.587 f  alu_core/__29_carry__4/O[1]
                          net (fo=2, routed)           0.814    12.401    alu_core/p_0_in[21]
-    SLICE_X0Y66                                                       f  alu_core/z_flag_reg_i_10/I0
     SLICE_X0Y66          LUT4 (Prop_lut4_I0_O)        0.303    12.704 r  alu_core/z_flag_reg_i_10/O
                          net (fo=1, routed)           0.804    13.507    rf/z_flag_reg_reg_0
-    SLICE_X2Y66                                                       r  rf/z_flag_reg_i_3/I5
     SLICE_X2Y66          LUT6 (Prop_lut6_I5_O)        0.124    13.631 r  rf/z_flag_reg_i_3/O
                          net (fo=1, routed)           0.295    13.927    alu_core/z_flag_reg_reg_0
-    SLICE_X3Y64                                                       r  alu_core/z_flag_reg_i_1/I1
     SLICE_X3Y64          LUT6 (Prop_lut6_I1_O)        0.124    14.051 r  alu_core/z_flag_reg_i_1/O
                          net (fo=1, routed)           0.000    14.051    alu_core_n_40
     SLICE_X3Y64          FDCE                                         r  z_flag_reg_reg/D
@@ -452,10 +294,8 @@ Slack (MET) :             0.825ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.501    14.625    clk_IBUF_BUFG
     SLICE_X3Y64          FDCE                                         r  z_flag_reg_reg/C
@@ -493,63 +333,47 @@ Slack (MET) :             0.927ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.313    11.794 r  alu_core/__29_carry__6/O[3]
                          net (fo=2, routed)           0.719    12.513    rf/O[3]
-    SLICE_X2Y66                                                       r  rf/monitor_alu_res_OBUF[31]_inst_i_1/I0
     SLICE_X2Y66          LUT2 (Prop_lut2_I0_O)        0.301    12.814 r  rf/monitor_alu_res_OBUF[31]_inst_i_1/O
                          net (fo=6, routed)           0.783    13.597    rf/D[3]
-    SLICE_X3Y60                                                       r  rf/n_flag_reg_i_1/I0
     SLICE_X3Y60          LUT5 (Prop_lut5_I0_O)        0.355    13.952 r  rf/n_flag_reg_i_1/O
                          net (fo=1, routed)           0.000    13.952    rf_n_134
     SLICE_X3Y60          FDCE                                         r  n_flag_reg_reg/D
@@ -558,10 +382,8 @@ Slack (MET) :             0.927ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.504    14.628    clk_IBUF_BUFG
     SLICE_X3Y60          FDCE                                         r  n_flag_reg_reg/C
@@ -599,60 +421,45 @@ Slack (MET) :             0.935ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.313    11.794 r  alu_core/__29_carry__6/O[3]
                          net (fo=2, routed)           0.719    12.513    rf/O[3]
-    SLICE_X2Y66                                                       r  rf/monitor_alu_res_OBUF[31]_inst_i_1/I0
     SLICE_X2Y66          LUT2 (Prop_lut2_I0_O)        0.301    12.814 r  rf/monitor_alu_res_OBUF[31]_inst_i_1/O
                          net (fo=6, routed)           0.834    13.648    rf/D[3]
     SLICE_X2Y68          FDCE                                         r  rf/rf_reg[1][31]/D
@@ -661,10 +468,8 @@ Slack (MET) :             0.935ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.496    14.620    rf/CLK
     SLICE_X2Y68          FDCE                                         r  rf/rf_reg[1][31]/C
@@ -702,56 +507,42 @@ Slack (MET) :             1.034ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_O[1])
                                                       0.334    11.701 r  alu_core/__29_carry__5/O[1]
                          net (fo=2, routed)           0.733    12.434    alu_core/p_0_in[25]
-    SLICE_X0Y67                                                       r  alu_core/monitor_alu_res_OBUF[25]_inst_i_1/I0
     SLICE_X0Y67          LUT2 (Prop_lut2_I0_O)        0.297    12.731 r  alu_core/monitor_alu_res_OBUF[25]_inst_i_1/O
                          net (fo=4, routed)           0.816    13.547    rf/rf_reg[3][27]_0[25]
     SLICE_X0Y67          FDCE                                         r  rf/rf_reg[1][25]_lopt_replica/D
@@ -760,10 +551,8 @@ Slack (MET) :             1.034ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.498    14.622    rf/CLK
     SLICE_X0Y67          FDCE                                         r  rf/rf_reg[1][25]_lopt_replica/C
@@ -801,60 +590,45 @@ Slack (MET) :             1.042ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.313    11.794 r  alu_core/__29_carry__6/O[3]
                          net (fo=2, routed)           0.719    12.513    rf/O[3]
-    SLICE_X2Y66                                                       r  rf/monitor_alu_res_OBUF[31]_inst_i_1/I0
     SLICE_X2Y66          LUT2 (Prop_lut2_I0_O)        0.301    12.814 r  rf/monitor_alu_res_OBUF[31]_inst_i_1/O
                          net (fo=6, routed)           0.726    13.540    rf/D[3]
     SLICE_X2Y69          FDCE                                         r  rf/rf_reg[0][31]/D
@@ -863,10 +637,8 @@ Slack (MET) :             1.042ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.495    14.619    rf/CLK
     SLICE_X2Y69          FDCE                                         r  rf/rf_reg[0][31]/C
@@ -904,56 +676,42 @@ Slack (MET) :             1.060ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.313    11.680 r  alu_core/__29_carry__5/O[3]
                          net (fo=2, routed)           0.677    12.357    alu_core/p_0_in[27]
-    SLICE_X0Y67                                                       r  alu_core/monitor_alu_res_OBUF[27]_inst_i_1/I0
     SLICE_X0Y67          LUT2 (Prop_lut2_I0_O)        0.334    12.691 r  alu_core/monitor_alu_res_OBUF[27]_inst_i_1/O
                          net (fo=4, routed)           0.825    13.516    rf/rf_reg[3][27]_0[27]
     SLICE_X0Y66          FDCE                                         r  rf/rf_reg[1][27]_lopt_replica/D
@@ -962,10 +720,8 @@ Slack (MET) :             1.060ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.499    14.623    rf/CLK
     SLICE_X0Y66          FDCE                                         r  rf/rf_reg[1][27]_lopt_replica/C
@@ -1003,60 +759,45 @@ Slack (MET) :             1.080ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.313    11.794 r  alu_core/__29_carry__6/O[3]
                          net (fo=2, routed)           0.719    12.513    rf/O[3]
-    SLICE_X2Y66                                                       r  rf/monitor_alu_res_OBUF[31]_inst_i_1/I0
     SLICE_X2Y66          LUT2 (Prop_lut2_I0_O)        0.301    12.814 r  rf/monitor_alu_res_OBUF[31]_inst_i_1/O
                          net (fo=6, routed)           0.675    13.489    rf/D[3]
     SLICE_X2Y66          FDCE                                         r  rf/rf_reg[1][31]_lopt_replica/D
@@ -1065,10 +806,8 @@ Slack (MET) :             1.080ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.499    14.623    rf/CLK
     SLICE_X2Y66          FDCE                                         r  rf/rf_reg[1][31]_lopt_replica/C
@@ -1106,52 +845,39 @@ Slack (MET) :             1.181ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_O[2])
                                                       0.239    11.492 r  alu_core/__29_carry__4/O[2]
                          net (fo=2, routed)           0.651    12.143    alu_core/p_0_in[22]
-    SLICE_X0Y66                                                       r  alu_core/monitor_alu_res_OBUF[22]_inst_i_1/I0
     SLICE_X0Y66          LUT2 (Prop_lut2_I0_O)        0.328    12.471 r  alu_core/monitor_alu_res_OBUF[22]_inst_i_1/O
                          net (fo=4, routed)           0.860    13.331    rf/rf_reg[3][27]_0[22]
     SLICE_X1Y67          FDCE                                         r  rf/rf_reg[0][22]/D
@@ -1160,10 +886,8 @@ Slack (MET) :             1.181ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.498    14.622    rf/CLK
     SLICE_X1Y67          FDCE                                         r  rf/rf_reg[0][22]/C
@@ -1201,60 +925,45 @@ Slack (MET) :             1.195ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[1])
                                                       0.334    11.815 r  alu_core/__29_carry__6/O[1]
                          net (fo=2, routed)           0.434    12.249    rf/O[1]
-    SLICE_X0Y67                                                       r  rf/monitor_alu_res_OBUF[29]_inst_i_1/I0
     SLICE_X0Y67          LUT2 (Prop_lut2_I0_O)        0.299    12.548 r  rf/monitor_alu_res_OBUF[29]_inst_i_1/O
                          net (fo=4, routed)           0.794    13.343    rf/D[1]
     SLICE_X1Y67          FDCE                                         r  rf/rf_reg[0][29]/D
@@ -1263,10 +972,8 @@ Slack (MET) :             1.195ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.498    14.622    rf/CLK
     SLICE_X1Y67          FDCE                                         r  rf/rf_reg[0][29]/C
@@ -1304,44 +1011,33 @@ Slack (MET) :             1.278ns  (required time - arrival time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_O[2])
                                                       0.239    11.264 r  alu_core/__29_carry__2/O[2]
                          net (fo=2, routed)           0.720    11.984    alu_core/p_0_in[14]
-    SLICE_X0Y64                                                       r  alu_core/monitor_alu_res_OBUF[14]_inst_i_1/I0
     SLICE_X0Y64          LUT2 (Prop_lut2_I0_O)        0.296    12.280 r  alu_core/monitor_alu_res_OBUF[14]_inst_i_1/O
                          net (fo=5, routed)           0.980    13.260    rf/rf_reg[3][27]_0[14]
     SLICE_X1Y62          FDCE                                         r  rf/rf_reg[1][14]_lopt_replica/D
@@ -1350,10 +1046,8 @@ Slack (MET) :             1.278ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.502    14.626    rf/CLK
     SLICE_X1Y62          FDCE                                         r  rf/rf_reg[1][14]_lopt_replica/C
@@ -1392,17 +1086,14 @@ Slack (MET) :             0.261ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.596     1.664    clk_IBUF_BUFG
     SLICE_X0Y42          FDCE                                         r  pc_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X0Y42          FDCE (Prop_fdce_C_Q)         0.141     1.805 f  pc_reg[0]/Q
                          net (fo=8, routed)           0.167     1.972    monitor_pc_OBUF[0]
-    SLICE_X0Y42                                                       f  pc[0]_i_1/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.045     2.017 r  pc[0]_i_1/O
                          net (fo=1, routed)           0.000     2.017    next_pc[0]
     SLICE_X0Y42          FDCE                                         r  pc_reg[0]/D
@@ -1411,10 +1102,8 @@ Slack (MET) :             0.261ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.867     2.190    clk_IBUF_BUFG
     SLICE_X0Y42          FDCE                                         r  pc_reg[0]/C
@@ -1446,17 +1135,14 @@ Slack (MET) :             0.262ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.589     1.657    clk_IBUF_BUFG
     SLICE_X3Y60          FDCE                                         r  n_flag_reg_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X3Y60          FDCE (Prop_fdce_C_Q)         0.141     1.798 r  n_flag_reg_reg/Q
                          net (fo=3, routed)           0.167     1.965    rf/n_flag_reg
-    SLICE_X3Y60                                                       r  rf/n_flag_reg_i_1/I4
     SLICE_X3Y60          LUT5 (Prop_lut5_I4_O)        0.045     2.010 r  rf/n_flag_reg_i_1/O
                          net (fo=1, routed)           0.000     2.010    rf_n_134
     SLICE_X3Y60          FDCE                                         r  n_flag_reg_reg/D
@@ -1465,10 +1151,8 @@ Slack (MET) :             0.262ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.860     2.183    clk_IBUF_BUFG
     SLICE_X3Y60          FDCE                                         r  n_flag_reg_reg/C
@@ -1500,17 +1184,14 @@ Slack (MET) :             0.263ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.587     1.655    clk_IBUF_BUFG
     SLICE_X3Y64          FDCE                                         r  z_flag_reg_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X3Y64          FDCE (Prop_fdce_C_Q)         0.141     1.796 r  z_flag_reg_reg/Q
                          net (fo=3, routed)           0.168     1.964    alu_core/z_flag_reg
-    SLICE_X3Y64                                                       r  alu_core/z_flag_reg_i_1/I5
     SLICE_X3Y64          LUT6 (Prop_lut6_I5_O)        0.045     2.009 r  alu_core/z_flag_reg_i_1/O
                          net (fo=1, routed)           0.000     2.009    alu_core_n_40
     SLICE_X3Y64          FDCE                                         r  z_flag_reg_reg/D
@@ -1519,10 +1200,8 @@ Slack (MET) :             0.263ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.856     2.180    clk_IBUF_BUFG
     SLICE_X3Y64          FDCE                                         r  z_flag_reg_reg/C
@@ -1554,20 +1233,16 @@ Slack (MET) :             0.473ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.589     1.657    clk_IBUF_BUFG
     SLICE_X3Y60          FDCE                                         r  n_flag_reg_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X3Y60          FDCE (Prop_fdce_C_Q)         0.141     1.798 f  n_flag_reg_reg/Q
                          net (fo=3, routed)           0.206     2.004    n_flag_reg
-    SLICE_X3Y60                                                       f  pc[31]_i_4/I0
     SLICE_X3Y60          LUT5 (Prop_lut5_I0_O)        0.045     2.049 r  pc[31]_i_4/O
                          net (fo=4, routed)           0.404     2.453    pc[31]_i_4_n_0
-    SLICE_X1Y42                                                       r  pc[1]_i_1/I1
     SLICE_X1Y42          LUT4 (Prop_lut4_I1_O)        0.045     2.498 r  pc[1]_i_1/O
                          net (fo=1, routed)           0.000     2.498    next_pc[1]
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/D
@@ -1576,10 +1251,8 @@ Slack (MET) :             0.473ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.867     2.190    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
@@ -1611,21 +1284,17 @@ Slack (MET) :             0.500ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.588     1.656    clk_IBUF_BUFG
     SLICE_X1Y20          FDCE                                         r  pc_reg[19]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y20          FDCE (Prop_fdce_C_Q)         0.141     1.797 r  pc_reg[19]/Q
                          net (fo=2, routed)           0.070     1.867    monitor_pc_OBUF[19]
-    SLICE_X0Y20                                                       r  pc_reg[20]_i_2/S[2]
     SLICE_X0Y20          CARRY4 (Prop_carry4_S[2]_O[2])
                                                       0.111     1.978 r  pc_reg[20]_i_2/O[2]
                          net (fo=1, routed)           0.161     2.139    pc_plus_1[19]
-    SLICE_X1Y20                                                       r  pc[19]_i_1/I0
     SLICE_X1Y20          LUT2 (Prop_lut2_I0_O)        0.108     2.247 r  pc[19]_i_1/O
                          net (fo=1, routed)           0.000     2.247    next_pc[19]
     SLICE_X1Y20          FDCE                                         r  pc_reg[19]/D
@@ -1634,10 +1303,8 @@ Slack (MET) :             0.500ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.857     2.180    clk_IBUF_BUFG
     SLICE_X1Y20          FDCE                                         r  pc_reg[19]/C
@@ -1669,21 +1336,17 @@ Slack (MET) :             0.500ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.587     1.655    clk_IBUF_BUFG
     SLICE_X1Y21          FDCE                                         r  pc_reg[23]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y21          FDCE (Prop_fdce_C_Q)         0.141     1.796 r  pc_reg[23]/Q
                          net (fo=2, routed)           0.071     1.866    monitor_pc_OBUF[23]
-    SLICE_X0Y21                                                       r  pc_reg[24]_i_2/S[2]
     SLICE_X0Y21          CARRY4 (Prop_carry4_S[2]_O[2])
                                                       0.111     1.977 r  pc_reg[24]_i_2/O[2]
                          net (fo=1, routed)           0.161     2.138    pc_plus_1[23]
-    SLICE_X1Y21                                                       r  pc[23]_i_1/I0
     SLICE_X1Y21          LUT2 (Prop_lut2_I0_O)        0.108     2.246 r  pc[23]_i_1/O
                          net (fo=1, routed)           0.000     2.246    next_pc[23]
     SLICE_X1Y21          FDCE                                         r  pc_reg[23]/D
@@ -1692,10 +1355,8 @@ Slack (MET) :             0.500ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.856     2.179    clk_IBUF_BUFG
     SLICE_X1Y21          FDCE                                         r  pc_reg[23]/C
@@ -1727,21 +1388,17 @@ Slack (MET) :             0.502ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.587     1.655    clk_IBUF_BUFG
     SLICE_X1Y22          FDCE                                         r  pc_reg[27]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y22          FDCE (Prop_fdce_C_Q)         0.141     1.796 r  pc_reg[27]/Q
                          net (fo=2, routed)           0.073     1.868    monitor_pc_OBUF[27]
-    SLICE_X0Y22                                                       r  pc_reg[28]_i_2/S[2]
     SLICE_X0Y22          CARRY4 (Prop_carry4_S[2]_O[2])
                                                       0.111     1.979 r  pc_reg[28]_i_2/O[2]
                          net (fo=1, routed)           0.161     2.141    pc_plus_1[27]
-    SLICE_X1Y22                                                       r  pc[27]_i_1/I0
     SLICE_X1Y22          LUT2 (Prop_lut2_I0_O)        0.108     2.249 r  pc[27]_i_1/O
                          net (fo=1, routed)           0.000     2.249    next_pc[27]
     SLICE_X1Y22          FDCE                                         r  pc_reg[27]/D
@@ -1750,10 +1407,8 @@ Slack (MET) :             0.502ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.855     2.178    clk_IBUF_BUFG
     SLICE_X1Y22          FDCE                                         r  pc_reg[27]/C
@@ -1785,20 +1440,16 @@ Slack (MET) :             0.511ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.589     1.657    clk_IBUF_BUFG
     SLICE_X3Y60          FDCE                                         r  n_flag_reg_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X3Y60          FDCE (Prop_fdce_C_Q)         0.141     1.798 f  n_flag_reg_reg/Q
                          net (fo=3, routed)           0.206     2.004    n_flag_reg
-    SLICE_X3Y60                                                       f  pc[31]_i_4/I0
     SLICE_X3Y60          LUT5 (Prop_lut5_I0_O)        0.045     2.049 r  pc[31]_i_4/O
                          net (fo=4, routed)           0.444     2.493    pc[31]_i_4_n_0
-    SLICE_X0Y41                                                       r  pc[3]_i_1/I1
     SLICE_X0Y41          LUT4 (Prop_lut4_I1_O)        0.045     2.538 r  pc[3]_i_1/O
                          net (fo=1, routed)           0.000     2.538    next_pc[3]
     SLICE_X0Y41          FDCE                                         r  pc_reg[3]/D
@@ -1807,10 +1458,8 @@ Slack (MET) :             0.511ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.867     2.190    clk_IBUF_BUFG
     SLICE_X0Y41          FDCE                                         r  pc_reg[3]/C
@@ -1842,20 +1491,16 @@ Slack (MET) :             0.513ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.589     1.657    clk_IBUF_BUFG
     SLICE_X3Y60          FDCE                                         r  n_flag_reg_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X3Y60          FDCE (Prop_fdce_C_Q)         0.141     1.798 f  n_flag_reg_reg/Q
                          net (fo=3, routed)           0.206     2.004    n_flag_reg
-    SLICE_X3Y60                                                       f  pc[31]_i_4/I0
     SLICE_X3Y60          LUT5 (Prop_lut5_I0_O)        0.045     2.049 r  pc[31]_i_4/O
                          net (fo=4, routed)           0.446     2.495    pc[31]_i_4_n_0
-    SLICE_X0Y41                                                       r  pc[2]_i_1/I1
     SLICE_X0Y41          LUT4 (Prop_lut4_I1_O)        0.045     2.540 r  pc[2]_i_1/O
                          net (fo=1, routed)           0.000     2.540    next_pc[2]
     SLICE_X0Y41          FDCE                                         r  pc_reg[2]/D
@@ -1864,10 +1509,8 @@ Slack (MET) :             0.513ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.867     2.190    clk_IBUF_BUFG
     SLICE_X0Y41          FDCE                                         r  pc_reg[2]/C
@@ -1899,21 +1542,17 @@ Slack (MET) :             0.546ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.590     1.658    clk_IBUF_BUFG
     SLICE_X1Y18          FDCE                                         r  pc_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y18          FDCE (Prop_fdce_C_Q)         0.141     1.799 r  pc_reg[9]/Q
                          net (fo=2, routed)           0.073     1.872    monitor_pc_OBUF[9]
-    SLICE_X0Y18                                                       r  pc_reg[12]_i_2/S[0]
     SLICE_X0Y18          CARRY4 (Prop_carry4_S[0]_O[1])
                                                       0.151     2.023 r  pc_reg[12]_i_2/O[1]
                          net (fo=1, routed)           0.166     2.189    pc_plus_1[10]
-    SLICE_X1Y18                                                       r  pc[10]_i_1/I0
     SLICE_X1Y18          LUT2 (Prop_lut2_I0_O)        0.107     2.296 r  pc[10]_i_1/O
                          net (fo=1, routed)           0.000     2.296    next_pc[10]
     SLICE_X1Y18          FDCE                                         r  pc_reg[10]/D
@@ -1922,10 +1561,8 @@ Slack (MET) :             0.546ns  (arrival time - required time)
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.430     0.430 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.865     1.295    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.324 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.859     2.182    clk_IBUF_BUFG
     SLICE_X1Y18          FDCE                                         r  pc_reg[10]/C
@@ -2021,7 +1658,6 @@ Slack (MET) :             4.528ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.720     9.671    rst_IBUF
     SLICE_X1Y16          FDCE                                         f  pc_reg[4]/CLR
@@ -2030,10 +1666,8 @@ Slack (MET) :             4.528ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.515    14.640    clk_IBUF_BUFG
     SLICE_X1Y16          FDCE                                         r  pc_reg[4]/C
@@ -2073,7 +1707,6 @@ Slack (MET) :             4.668ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.579     9.530    rst_IBUF
     SLICE_X1Y17          FDCE                                         f  pc_reg[5]/CLR
@@ -2082,10 +1715,8 @@ Slack (MET) :             4.668ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.514    14.639    clk_IBUF_BUFG
     SLICE_X1Y17          FDCE                                         r  pc_reg[5]/C
@@ -2125,7 +1756,6 @@ Slack (MET) :             4.668ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.579     9.530    rst_IBUF
     SLICE_X1Y17          FDCE                                         f  pc_reg[6]/CLR
@@ -2134,10 +1764,8 @@ Slack (MET) :             4.668ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.514    14.639    clk_IBUF_BUFG
     SLICE_X1Y17          FDCE                                         r  pc_reg[6]/C
@@ -2177,7 +1805,6 @@ Slack (MET) :             4.668ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.579     9.530    rst_IBUF
     SLICE_X1Y17          FDCE                                         f  pc_reg[7]/CLR
@@ -2186,10 +1813,8 @@ Slack (MET) :             4.668ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.514    14.639    clk_IBUF_BUFG
     SLICE_X1Y17          FDCE                                         r  pc_reg[7]/C
@@ -2229,7 +1854,6 @@ Slack (MET) :             4.668ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.579     9.530    rst_IBUF
     SLICE_X1Y17          FDCE                                         f  pc_reg[8]/CLR
@@ -2238,10 +1862,8 @@ Slack (MET) :             4.668ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.514    14.639    clk_IBUF_BUFG
     SLICE_X1Y17          FDCE                                         r  pc_reg[8]/C
@@ -2281,7 +1903,6 @@ Slack (MET) :             4.816ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.428     9.380    rst_IBUF
     SLICE_X1Y18          FDCE                                         f  pc_reg[10]/CLR
@@ -2290,10 +1911,8 @@ Slack (MET) :             4.816ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.512    14.637    clk_IBUF_BUFG
     SLICE_X1Y18          FDCE                                         r  pc_reg[10]/C
@@ -2333,7 +1952,6 @@ Slack (MET) :             4.816ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.428     9.380    rst_IBUF
     SLICE_X1Y18          FDCE                                         f  pc_reg[11]/CLR
@@ -2342,10 +1960,8 @@ Slack (MET) :             4.816ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.512    14.637    clk_IBUF_BUFG
     SLICE_X1Y18          FDCE                                         r  pc_reg[11]/C
@@ -2385,7 +2001,6 @@ Slack (MET) :             4.816ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.428     9.380    rst_IBUF
     SLICE_X1Y18          FDCE                                         f  pc_reg[12]/CLR
@@ -2394,10 +2009,8 @@ Slack (MET) :             4.816ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.512    14.637    clk_IBUF_BUFG
     SLICE_X1Y18          FDCE                                         r  pc_reg[12]/C
@@ -2437,7 +2050,6 @@ Slack (MET) :             4.816ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.428     9.380    rst_IBUF
     SLICE_X1Y18          FDCE                                         f  pc_reg[9]/CLR
@@ -2446,10 +2058,8 @@ Slack (MET) :             4.816ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.512    14.637    clk_IBUF_BUFG
     SLICE_X1Y18          FDCE                                         r  pc_reg[9]/C
@@ -2489,7 +2099,6 @@ Slack (MET) :             4.966ns  (required time - arrival time)
                          input delay                  2.000     2.000    
     D10                                               0.000     2.000 f  rst (IN)
                          net (fo=0)                   0.000     2.000    rst
-    D10                                                               f  rst_IBUF_inst/I
     D10                  IBUF (Prop_ibuf_I_O)         0.952     2.952 f  rst_IBUF_inst/O
                          net (fo=146, routed)         6.277     9.229    rst_IBUF
     SLICE_X1Y19          FDCE                                         f  pc_reg[13]/CLR
@@ -2498,10 +2107,8 @@ Slack (MET) :             4.966ns  (required time - arrival time)
                          (clock sys_clk rise edge)   10.000    10.000 r  
     C9                                                0.000    10.000 r  clk (IN)
                          net (fo=0)                   0.000    10.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.878    10.878 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.155    13.033    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.124 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.511    14.636    clk_IBUF_BUFG
     SLICE_X1Y19          FDCE                                         r  pc_reg[13]/C
@@ -2550,63 +2157,47 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.313    11.794 r  alu_core/__29_carry__6/O[3]
                          net (fo=2, routed)           0.719    12.513    rf/O[3]
-    SLICE_X2Y66                                                       r  rf/monitor_alu_res_OBUF[31]_inst_i_1/I0
     SLICE_X2Y66          LUT2 (Prop_lut2_I0_O)        0.301    12.814 r  rf/monitor_alu_res_OBUF[31]_inst_i_1/O
                          net (fo=6, routed)           2.440    15.254    monitor_alu_res_OBUF[31]
-    A14                                                               r  monitor_alu_res_OBUF[31]_inst/I
     A14                  OBUF (Prop_obuf_I_O)         2.901    18.155 r  monitor_alu_res_OBUF[31]_inst/O
                          net (fo=0)                   0.000    18.155    monitor_alu_res[31]
     A14                                                               r  monitor_alu_res[31] (OUT)
@@ -2632,63 +2223,47 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[1])
                                                       0.334    11.815 r  alu_core/__29_carry__6/O[1]
                          net (fo=2, routed)           0.434    12.249    rf/O[1]
-    SLICE_X0Y67                                                       r  rf/monitor_alu_res_OBUF[29]_inst_i_1/I0
     SLICE_X0Y67          LUT2 (Prop_lut2_I0_O)        0.299    12.548 r  rf/monitor_alu_res_OBUF[29]_inst_i_1/O
                          net (fo=4, routed)           2.285    14.833    monitor_alu_res_OBUF[29]
-    A18                                                               r  monitor_alu_res_OBUF[29]_inst/I
     A18                  OBUF (Prop_obuf_I_O)         2.864    17.698 r  monitor_alu_res_OBUF[29]_inst/O
                          net (fo=0)                   0.000    17.698    monitor_alu_res[29]
     A18                                                               r  monitor_alu_res[29] (OUT)
@@ -2714,59 +2289,44 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_O[1])
                                                       0.334    11.701 r  alu_core/__29_carry__5/O[1]
                          net (fo=2, routed)           0.733    12.434    alu_core/p_0_in[25]
-    SLICE_X0Y67                                                       r  alu_core/monitor_alu_res_OBUF[25]_inst_i_1/I0
     SLICE_X0Y67          LUT2 (Prop_lut2_I0_O)        0.297    12.731 r  alu_core/monitor_alu_res_OBUF[25]_inst_i_1/O
                          net (fo=4, routed)           2.077    14.807    monitor_alu_res_OBUF[25]
-    C15                                                               r  monitor_alu_res_OBUF[25]_inst/I
     C15                  OBUF (Prop_obuf_I_O)         2.857    17.664 r  monitor_alu_res_OBUF[25]_inst/O
                          net (fo=0)                   0.000    17.664    monitor_alu_res[25]
     C15                                                               r  monitor_alu_res[25] (OUT)
@@ -2792,59 +2352,44 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.313    11.680 r  alu_core/__29_carry__5/O[3]
                          net (fo=2, routed)           0.677    12.357    alu_core/p_0_in[27]
-    SLICE_X0Y67                                                       r  alu_core/monitor_alu_res_OBUF[27]_inst_i_1/I0
     SLICE_X0Y67          LUT2 (Prop_lut2_I0_O)        0.334    12.691 r  alu_core/monitor_alu_res_OBUF[27]_inst_i_1/O
                          net (fo=4, routed)           1.991    14.682    monitor_alu_res_OBUF[27]
-    E16                                                               r  monitor_alu_res_OBUF[27]_inst/I
     E16                  OBUF (Prop_obuf_I_O)         2.866    17.548 r  monitor_alu_res_OBUF[27]_inst/O
                          net (fo=0)                   0.000    17.548    monitor_alu_res[27]
     E16                                                               r  monitor_alu_res[27] (OUT)
@@ -2870,63 +2415,47 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[2])
                                                       0.239    11.720 r  alu_core/__29_carry__6/O[2]
                          net (fo=2, routed)           0.463    12.183    rf/O[2]
-    SLICE_X0Y66                                                       r  rf/monitor_alu_res_OBUF[30]_inst_i_1/I0
     SLICE_X0Y66          LUT2 (Prop_lut2_I0_O)        0.302    12.485 r  rf/monitor_alu_res_OBUF[30]_inst_i_1/O
                          net (fo=4, routed)           2.401    14.886    monitor_alu_res_OBUF[30]
-    B18                                                               r  monitor_alu_res_OBUF[30]_inst/I
     B18                  OBUF (Prop_obuf_I_O)         2.657    17.544 r  monitor_alu_res_OBUF[30]_inst/O
                          net (fo=0)                   0.000    17.544    monitor_alu_res[30]
     B18                                                               r  monitor_alu_res[30] (OUT)
@@ -2952,63 +2481,47 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.481 r  alu_core/__29_carry__5/CO[3]
                          net (fo=1, routed)           0.000    11.481    alu_core/__29_carry__5_n_0
-    SLICE_X1Y68                                                       r  alu_core/__29_carry__6/CI
     SLICE_X1Y68          CARRY4 (Prop_carry4_CI_O[0])
                                                       0.222    11.703 r  alu_core/__29_carry__6/O[0]
                          net (fo=2, routed)           0.598    12.301    rf/O[0]
-    SLICE_X0Y67                                                       r  rf/monitor_alu_res_OBUF[28]_inst_i_1/I0
     SLICE_X0Y67          LUT2 (Prop_lut2_I0_O)        0.299    12.600 r  rf/monitor_alu_res_OBUF[28]_inst_i_1/O
                          net (fo=4, routed)           1.990    14.590    monitor_alu_res_OBUF[28]
-    E15                                                               r  monitor_alu_res_OBUF[28]_inst/I
     E15                  OBUF (Prop_obuf_I_O)         2.656    17.246 r  monitor_alu_res_OBUF[28]_inst/O
                          net (fo=0)                   0.000    17.246    monitor_alu_res[28]
     E15                                                               r  monitor_alu_res[28] (OUT)
@@ -3034,55 +2547,41 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_O[0])
                                                       0.222    11.475 r  alu_core/__29_carry__4/O[0]
                          net (fo=2, routed)           0.594    12.068    alu_core/p_0_in[20]
-    SLICE_X0Y65                                                       r  alu_core/monitor_alu_res_OBUF[20]_inst_i_1/I0
     SLICE_X0Y65          LUT2 (Prop_lut2_I0_O)        0.324    12.392 r  alu_core/monitor_alu_res_OBUF[20]_inst_i_1/O
                          net (fo=4, routed)           2.003    14.396    monitor_alu_res_OBUF[20]
-    H14                                                               r  monitor_alu_res_OBUF[20]_inst/I
     H14                  OBUF (Prop_obuf_I_O)         2.835    17.231 r  monitor_alu_res_OBUF[20]_inst/O
                          net (fo=0)                   0.000    17.231    monitor_alu_res[20]
     H14                                                               r  monitor_alu_res[20] (OUT)
@@ -3108,55 +2607,41 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_O[2])
                                                       0.239    11.492 r  alu_core/__29_carry__4/O[2]
                          net (fo=2, routed)           0.651    12.143    alu_core/p_0_in[22]
-    SLICE_X0Y66                                                       r  alu_core/monitor_alu_res_OBUF[22]_inst_i_1/I0
     SLICE_X0Y66          LUT2 (Prop_lut2_I0_O)        0.328    12.471 r  alu_core/monitor_alu_res_OBUF[22]_inst_i_1/O
                          net (fo=4, routed)           1.897    14.368    monitor_alu_res_OBUF[22]
-    F15                                                               r  monitor_alu_res_OBUF[22]_inst/I
     F15                  OBUF (Prop_obuf_I_O)         2.859    17.227 r  monitor_alu_res_OBUF[22]_inst/O
                          net (fo=0)                   0.000    17.227    monitor_alu_res[22]
     F15                                                               r  monitor_alu_res[22] (OUT)
@@ -3182,59 +2667,44 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.367 r  alu_core/__29_carry__4/CO[3]
                          net (fo=1, routed)           0.000    11.367    alu_core/__29_carry__4_n_0
-    SLICE_X1Y67                                                       r  alu_core/__29_carry__5/CI
     SLICE_X1Y67          CARRY4 (Prop_carry4_CI_O[0])
                                                       0.222    11.589 r  alu_core/__29_carry__5/O[0]
                          net (fo=2, routed)           0.652    12.241    alu_core/p_0_in[24]
-    SLICE_X0Y67                                                       r  alu_core/monitor_alu_res_OBUF[24]_inst_i_1/I0
     SLICE_X0Y67          LUT2 (Prop_lut2_I0_O)        0.299    12.540 r  alu_core/monitor_alu_res_OBUF[24]_inst_i_1/O
                          net (fo=4, routed)           2.038    14.578    monitor_alu_res_OBUF[24]
-    H16                                                               r  monitor_alu_res_OBUF[24]_inst/I
     H16                  OBUF (Prop_obuf_I_O)         2.626    17.205 r  monitor_alu_res_OBUF[24]_inst/O
                          net (fo=0)                   0.000    17.205    monitor_alu_res[24]
     H16                                                               r  monitor_alu_res[24] (OUT)
@@ -3260,55 +2730,41 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         1.012     1.012 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.273     3.285    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.381 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         1.639     5.021    clk_IBUF_BUFG
     SLICE_X1Y42          FDCE                                         r  pc_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y42          FDCE (Prop_fdce_C_Q)         0.456     5.477 f  pc_reg[1]/Q
                          net (fo=8, routed)           0.683     6.159    rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/a[1]
-    SLICE_X0Y42                                                       f  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/I0
     SLICE_X0Y42          LUT4 (Prop_lut4_I0_O)        0.124     6.283 r  rom_block/U0/synth_options.dist_mem_inst/gen_rom.rom_inst/spo[26]_INST_0/O
                          net (fo=19, routed)          0.601     6.885    alu_core/spo[20]
-    SLICE_X0Y43                                                       r  alu_core/__29_carry__3_i_9/I2
     SLICE_X0Y43          LUT3 (Prop_lut3_I2_O)        0.150     7.035 r  alu_core/__29_carry__3_i_9/O
                          net (fo=32, routed)          1.241     8.275    rf/__29_carry_i_9_0
-    SLICE_X2Y61                                                       r  rf/__29_carry__0_i_12/I0
     SLICE_X2Y61          LUT2 (Prop_lut2_I0_O)        0.358     8.633 r  rf/__29_carry__0_i_12/O
                          net (fo=1, routed)           0.427     9.061    rf/__29_carry__0_i_12_n_0
-    SLICE_X2Y62                                                       r  rf/__29_carry__0_i_4/I1
     SLICE_X2Y62          LUT2 (Prop_lut2_I1_O)        0.341     9.402 r  rf/__29_carry__0_i_4/O
                          net (fo=2, routed)           0.646    10.048    rf/rf_reg[1][7]_1[0]
-    SLICE_X1Y62                                                       r  rf/__29_carry__0_i_8/I0
     SLICE_X1Y62          LUT2 (Prop_lut2_I0_O)        0.331    10.379 r  rf/__29_carry__0_i_8/O
                          net (fo=1, routed)           0.000    10.379    alu_core/rf_reg[3][7]_0[0]
-    SLICE_X1Y62                                                       r  alu_core/__29_carry__0/S[0]
     SLICE_X1Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
                                                       0.532    10.911 r  alu_core/__29_carry__0/CO[3]
                          net (fo=1, routed)           0.000    10.911    alu_core/__29_carry__0_n_0
-    SLICE_X1Y63                                                       r  alu_core/__29_carry__1/CI
     SLICE_X1Y63          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.025 r  alu_core/__29_carry__1/CO[3]
                          net (fo=1, routed)           0.000    11.025    alu_core/__29_carry__1_n_0
-    SLICE_X1Y64                                                       r  alu_core/__29_carry__2/CI
     SLICE_X1Y64          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.139 r  alu_core/__29_carry__2/CO[3]
                          net (fo=1, routed)           0.000    11.139    alu_core/__29_carry__2_n_0
-    SLICE_X1Y65                                                       r  alu_core/__29_carry__3/CI
     SLICE_X1Y65          CARRY4 (Prop_carry4_CI_CO[3])
                                                       0.114    11.253 r  alu_core/__29_carry__3/CO[3]
                          net (fo=1, routed)           0.000    11.253    alu_core/__29_carry__3_n_0
-    SLICE_X1Y66                                                       r  alu_core/__29_carry__4/CI
     SLICE_X1Y66          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.313    11.566 r  alu_core/__29_carry__4/O[3]
                          net (fo=2, routed)           0.617    12.183    alu_core/p_0_in[23]
-    SLICE_X2Y66                                                       r  alu_core/monitor_alu_res_OBUF[23]_inst_i_1/I0
     SLICE_X2Y66          LUT2 (Prop_lut2_I0_O)        0.306    12.489 r  alu_core/monitor_alu_res_OBUF[23]_inst_i_1/O
                          net (fo=4, routed)           2.033    14.522    monitor_alu_res_OBUF[23]
-    G16                                                               r  monitor_alu_res_OBUF[23]_inst/I
     G16                  OBUF (Prop_obuf_I_O)         2.628    17.150 r  monitor_alu_res_OBUF[23]_inst/O
                          net (fo=0)                   0.000    17.150    monitor_alu_res[23]
     G16                                                               r  monitor_alu_res[23] (OUT)
@@ -3340,17 +2796,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.587     1.655    clk_IBUF_BUFG
     SLICE_X1Y22          FDCE                                         r  pc_reg[22]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y22          FDCE (Prop_fdce_C_Q)         0.141     1.796 r  pc_reg[22]/Q
                          net (fo=2, routed)           0.295     2.090    monitor_pc_OBUF[22]
-    T14                                                               r  monitor_pc_OBUF[22]_inst/I
     T14                  OBUF (Prop_obuf_I_O)         1.147     3.237 r  monitor_pc_OBUF[22]_inst/O
                          net (fo=0)                   0.000     3.237    monitor_pc[22]
     T14                                                               r  monitor_pc[22] (OUT)
@@ -3376,17 +2829,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.588     1.656    clk_IBUF_BUFG
     SLICE_X1Y20          FDCE                                         r  pc_reg[19]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y20          FDCE (Prop_fdce_C_Q)         0.141     1.797 r  pc_reg[19]/Q
                          net (fo=2, routed)           0.338     2.135    monitor_pc_OBUF[19]
-    T16                                                               r  monitor_pc_OBUF[19]_inst/I
     T16                  OBUF (Prop_obuf_I_O)         1.143     3.278 r  monitor_pc_OBUF[19]_inst/O
                          net (fo=0)                   0.000     3.278    monitor_pc[19]
     T16                                                               r  monitor_pc[19] (OUT)
@@ -3412,17 +2862,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.587     1.655    clk_IBUF_BUFG
     SLICE_X1Y21          FDCE                                         r  pc_reg[23]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y21          FDCE (Prop_fdce_C_Q)         0.141     1.796 r  pc_reg[23]/Q
                          net (fo=2, routed)           0.354     2.149    monitor_pc_OBUF[23]
-    R15                                                               r  monitor_pc_OBUF[23]_inst/I
     R15                  OBUF (Prop_obuf_I_O)         1.133     3.283 r  monitor_pc_OBUF[23]_inst/O
                          net (fo=0)                   0.000     3.283    monitor_pc[23]
     R15                                                               r  monitor_pc[23] (OUT)
@@ -3448,17 +2895,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.589     1.657    clk_IBUF_BUFG
     SLICE_X1Y19          FDCE                                         r  pc_reg[15]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y19          FDCE (Prop_fdce_C_Q)         0.141     1.798 r  pc_reg[15]/Q
                          net (fo=2, routed)           0.366     2.164    monitor_pc_OBUF[15]
-    U18                                                               r  monitor_pc_OBUF[15]_inst/I
     U18                  OBUF (Prop_obuf_I_O)         1.146     3.310 r  monitor_pc_OBUF[15]_inst/O
                          net (fo=0)                   0.000     3.310    monitor_pc[15]
     U18                                                               r  monitor_pc[15] (OUT)
@@ -3484,17 +2928,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.589     1.657    clk_IBUF_BUFG
     SLICE_X1Y19          FDCE                                         r  pc_reg[14]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y19          FDCE (Prop_fdce_C_Q)         0.141     1.798 r  pc_reg[14]/Q
                          net (fo=2, routed)           0.370     2.168    monitor_pc_OBUF[14]
-    U16                                                               r  monitor_pc_OBUF[14]_inst/I
     U16                  OBUF (Prop_obuf_I_O)         1.147     3.315 r  monitor_pc_OBUF[14]_inst/O
                          net (fo=0)                   0.000     3.315    monitor_pc[14]
     U16                                                               r  monitor_pc[14] (OUT)
@@ -3520,17 +2961,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.588     1.656    clk_IBUF_BUFG
     SLICE_X1Y20          FDCE                                         r  pc_reg[17]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y20          FDCE (Prop_fdce_C_Q)         0.141     1.797 r  pc_reg[17]/Q
                          net (fo=2, routed)           0.363     2.160    monitor_pc_OBUF[17]
-    V16                                                               r  monitor_pc_OBUF[17]_inst/I
     V16                  OBUF (Prop_obuf_I_O)         1.156     3.316 r  monitor_pc_OBUF[17]_inst/O
                          net (fo=0)                   0.000     3.316    monitor_pc[17]
     V16                                                               r  monitor_pc[17] (OUT)
@@ -3556,17 +2994,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.590     1.658    clk_IBUF_BUFG
     SLICE_X1Y18          FDCE                                         r  pc_reg[12]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y18          FDCE (Prop_fdce_C_Q)         0.141     1.799 r  pc_reg[12]/Q
                          net (fo=2, routed)           0.375     2.174    monitor_pc_OBUF[12]
-    T11                                                               r  monitor_pc_OBUF[12]_inst/I
     T11                  OBUF (Prop_obuf_I_O)         1.146     3.320 r  monitor_pc_OBUF[12]_inst/O
                          net (fo=0)                   0.000     3.320    monitor_pc[12]
     T11                                                               r  monitor_pc[12] (OUT)
@@ -3592,17 +3027,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.589     1.657    clk_IBUF_BUFG
     SLICE_X1Y19          FDCE                                         r  pc_reg[13]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y19          FDCE (Prop_fdce_C_Q)         0.141     1.798 r  pc_reg[13]/Q
                          net (fo=2, routed)           0.379     2.177    monitor_pc_OBUF[13]
-    V17                                                               r  monitor_pc_OBUF[13]_inst/I
     V17                  OBUF (Prop_obuf_I_O)         1.145     3.322 r  monitor_pc_OBUF[13]_inst/O
                          net (fo=0)                   0.000     3.322    monitor_pc[13]
     V17                                                               r  monitor_pc[13] (OUT)
@@ -3628,17 +3060,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.587     1.655    clk_IBUF_BUFG
     SLICE_X1Y21          FDCE                                         r  pc_reg[21]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y21          FDCE (Prop_fdce_C_Q)         0.128     1.783 r  pc_reg[21]/Q
                          net (fo=2, routed)           0.352     2.134    monitor_pc_OBUF[21]
-    T15                                                               r  monitor_pc_OBUF[21]_inst/I
     T15                  OBUF (Prop_obuf_I_O)         1.200     3.334 r  monitor_pc_OBUF[21]_inst/O
                          net (fo=0)                   0.000     3.334    monitor_pc[21]
     T15                                                               r  monitor_pc[21] (OUT)
@@ -3664,17 +3093,14 @@ Slack:                    inf
                          (clock sys_clk rise edge)    0.000     0.000 r  
     C9                                                0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
-    C9                                                                r  clk_IBUF_inst/I
     C9                   IBUF (Prop_ibuf_I_O)         0.240     0.240 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.802     1.042    clk_IBUF
-    BUFGCTRL_X0Y16                                                    r  clk_IBUF_BUFG_inst/I
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.068 r  clk_IBUF_BUFG_inst/O
                          net (fo=146, routed)         0.587     1.655    clk_IBUF_BUFG
     SLICE_X1Y22          FDCE                                         r  pc_reg[27]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X1Y22          FDCE (Prop_fdce_C_Q)         0.141     1.796 r  pc_reg[27]/Q
                          net (fo=2, routed)           0.398     2.194    monitor_pc_OBUF[27]
-    N16                                                               r  monitor_pc_OBUF[27]_inst/I
     N16                  OBUF (Prop_obuf_I_O)         1.141     3.335 r  monitor_pc_OBUF[27]_inst/O
                          net (fo=0)                   0.000     3.335    monitor_pc[27]
     N16                                                               r  monitor_pc[27] (OUT)
