@@ -1,0 +1,46 @@
+# ==========================================
+# Vivado & Xilinx Ignore List (Heavy Files)
+# ==========================================
+# Vivado 프로젝트 디렉터리 전체 (가장 무거운 폴더)
+# 1. sim_project 폴더 내의 모든 것을 일단 무시
+sim_project/**/*
+
+# 2. 하위 경로에 있는 특정 파일들을 예외적으로 추적
+# '**'는 하위의 모든 폴더 단계를 의미합니다.
+!sim_project/**/sim_execution_trace.log
+!sim_project/**/utilization_report.txt
+!sim_project/**/timing_summary_report.txt
+
+# Vivado 백그라운드 찌꺼기 및 임시 폴더
+.Xil/
+*.pb
+
+# Vivado 실행 로그 및 저널 파일
+vivado*.log
+vivado*.jou
+vivado*.str
+
+# ==========================================
+# Project Specific Auto-Generated Files
+# ==========================================
+# 파이썬 스크립트가 자동 생성하는 메모리 초기화 파일 (무시)
+imem.coe
+
+
+# ==========================================
+# Python Ignore List
+# ==========================================
+# 파이썬 캐시 파일
+__pycache__/
+*.pyc
+*.pyo
+
+# ==========================================
+# OS & IDE Default Ignore
+# ==========================================
+# VSCode 설정 (개인 설정 공유 방지)
+.vscode/
+
+# Windows / macOS 시스템 파일
+Thumbs.db
+.DS_Store
